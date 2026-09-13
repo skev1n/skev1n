@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate assets/banner.svg and assets/banner-static.svg.
+"""Regenerate assets/wordmark.svg and assets/wordmark-static.svg.
 
 The constants below are copied from the skev.in source so this repo stands on
 its own: MASTHEAD_ART and MASTHEAD_SIZING from src/masthead.ts, the ribbon and
@@ -131,7 +131,7 @@ def build(animated: bool) -> str:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, animated in (("banner.svg", True), ("banner-static.svg", False)):
+    for name, animated in (("wordmark.svg", True), ("wordmark-static.svg", False)):
         path = OUT / name
         path.write_text(build(animated), encoding="utf-8")
         print(f"{path.relative_to(ROOT)}  {path.stat().st_size:,} bytes")

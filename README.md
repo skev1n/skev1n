@@ -1,4 +1,4 @@
-<a href="https://skev.in"><img src="assets/banner.svg" width="100%" alt="skev.in"></a>
+<a href="https://skev.in"><img src="assets/wordmark.svg" width="100%" alt="skev.in"></a>
 
 <table>
 <tr>
@@ -45,14 +45,6 @@ Intake, quotes, scheduled work, recurring plans, documents and follow-up for a b
 **Agent Browser API**
 Browser control for automation agents over a REST API: isolated sessions, navigation, input, screenshots, extraction, downloads and traces. It answers with a compact accessibility snapshot and stable element references instead of raw page markup, so responses stay small and every action target can be validated afterwards against the evidence it captured.
 <sub>Node.js / Express / Playwright Core / OpenAPI / Prometheus</sub>
-
-## How I work
-
-Hand-built over templates. Plain CSS, no starter kit, no component library I did not choose on purpose.
-
-Self-hosted where it counts. My own boxes, my own deploys, fonts and assets served from them, nothing phoning home.
-
-Ship with agents, then write down what happened. The write-up outlives the branch.
 
 ## Writing
 
