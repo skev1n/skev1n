@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="621" viewBox="0 0 1600 621" role="img" aria-label="skev.in">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="444" viewBox="0 0 1600 444" role="img" aria-label="skev.in">
   <title>skev.in</title>
   <defs>
     <linearGradient id="ribbon" gradientUnits="userSpaceOnUse" spreadMethod="repeat"
-      x1="0" y1="72.000" x2="0" y2="1429.997">
+      x1="0" y1="16.162" x2="0" y2="1250.909">
       <stop offset="0%" stop-color="#ef6b6b"/>
       <stop offset="17%" stop-color="#efbf5a"/>
       <stop offset="34%" stop-color="#7fcf8a"/>
@@ -11,7 +11,7 @@
       <stop offset="84%" stop-color="#be85e6"/>
       <stop offset="100%" stop-color="#ef6b6b"/>
       <animateTransform attributeName="gradientTransform" type="translate"
-        from="0 0" to="0 -1357.997" dur="8s"
+        from="0 0" to="0 -1234.747" dur="8s"
         repeatCount="indefinite" additive="sum"/>
     </linearGradient>
     <style>
@@ -21,34 +21,21 @@
         font-weight: 400;
         font-style: normal;
       }
-      @font-face {
-        font-family: "Commit Mono";
-        src: url(data:font/woff2;base64,d09GMk9UVE8AAAV0AAoAAAAADTgAAAUtAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAADY4AHIQ6BmAAXAE2AiQDMgQGBYNcByAbgwwAPgxwh3kLLiMe2AUhK8QlpSmJnDymd3XXzax+uUHEw9fY/87dfftVEZ+uIePJvWSzi3hiiGSGzHSG5NPJrody1Uywm4PYWRXAh9SB87I6wCWRnH/aX81fvktgo/YIzmL+gumEd1BIZhSy24V0neq2NP50sBZDDpZku2C73QmG2eyo7UAC5UTjsDSxNMneDv/pFSSVpmnzIEzoRKfPT6fTBa+ToyyE1BJt+zwIbhomVVqw7BVnrT2/1uqbc4Mo3o4STuJmSiR9PqKaxLUS6mYi6RJiUomUerksDWLFck6OtFHKVxAHF50eRAEMdPtpeWcRz/jg/xdx1tcF/wiEn9iPKP7DW2TX/F/e5gt64zD5G9fvD419hHKedvWRRSXlVjRTtblvbGnPsUEy+zUVXTJfpRWUpKQKhVKhYEqWegdEso7wlrCpKlwQ0RJWGqFTV+pyjVFpTHvXEoXJwiIj9qh0m3GNICTk4c6OqIjOUwklldMlcgq9wqEm9AZCPd36j7wLJPRzEX5xJI6gYf5lZyF2s1p5Xh1WF/Gj/FH9J5o711tc29ymtA3ma5ivTL0w+QQo6aAkHRv3TX4j6PSloC/FzmSVnWk/fvN3MMH3nAcuZKR4xt5mVoEQk8Xvm1bQkVo3+ZFdZEH++1DK9V+u+wAHko0g2Q6FkAlBTc/EncnDQjMoY05TrljHoaTLl/Vkbffr5oHte/ITVKfo0CE6pejU8J12hAFJFdhuTRIn/Qoq2gqaed8+R77+RN95v7P9SOkc932h+373FpziziW/dzUyI1tKipW8On1yr3QH9O16HriZ0YJpQJ0dLRYZFLgWz3sZCflZTVkZzCNJb8WZFnxX20jJAeYTy9Y9eo6qCzt8mM6osGF7rQgtlGLr8W3yink4PPyeFctu7jEbuddRvq+2w7fPeAo/lNe/82aYcEWcd1u1jGcVXT1z5CbieuaIhRZ4lTL3Q8zjRQmdDHM6+nmmjN1Uc8+u+fLpUTdgC1BNU3cOQmFW7Q2fc/YjVvgbxBz4pAcFKHW2OWyp43idQV21bZ4mzFAyF/NwefLuDAj0CSTDrVhVWEmAALwXP/nQAaWeAFCAYMvTZ+zAY3gF78SH+N5/gC6gl7cAiYq10ht3130ViDgENfAyDqgwNoAKgxtQsZhfBoFKKnQxuQiHVgJblQMJkFzbOaDoWit4MRBJRRPkXHIy+xoiaKkWciNjC9CRhWueu7a1wRzHvVh7eCK5fzNm0h0NDG1XgNbVnC46zdb4a1VDrxu5+FAzFqEhFg+UsajANVSkRxyDc30QXyTnOqxbY5VeuKrHaGZNL0bP4f4T2uNcObOKBEGtFFKEoURCd1yNBaubcZDKsazzIla2XDkSlYZYBg2UC7NW5P+yk9grPFZo/AMWENl7MWOd3WtIPQWP5JrLnPIwpWlaOZw8QKhAjJxoMBbrQikwOsb/ovZSyv/qWSEmJkBu4E4fnq5osc78CkL+EV49uL3xhB//7CUjO8ee03TN1FXvumzn8kfezaxnB3cp23ayHplxkmiajB0bAPeYRyN369GMowvRXIOnaCE8FkRLvrEiy8J77l4ZeGoWWlSPXnpuwoUKF8FNol1FhSJ+ER7Dj25joNeL123XceNXj9NT04kXIkQPKtXfoJ1Mhy3GQRfn1iixUxnNU2ojp4OYCdHh0xlMtdp/Lemlf7kuPQxWrFrVfD05VCLYbsLIhIkUIUGCjbWCrRQk7L1/gmyFYmnzam+Jm//F+y4RapL2n+WIAA==) format("woff2");
-        font-weight: 400;
-        font-style: normal;
-      }
       .art {
         font-family: "Departure Mono", ui-monospace, monospace;
-        font-size: 99.596px;
-        letter-spacing: -18.107px;
+        font-size: 107.744px;
+        letter-spacing: -19.588px;
         fill: url(#ribbon);
         white-space: pre;
         text-rendering: geometricPrecision;
       }
-      .label {
-        font-family: "Commit Mono", ui-monospace, monospace;
-        font-size: 22px;
-        fill: #81869f;
-      }
     </style>
   </defs>
-  <rect width="1600" height="621" fill="#0b0c15"/>
   <g>
-    <text class="art" x="72" y="153.483" xml:space="preserve">         __               _</text>
-    <text class="art" x="72" y="244.017" xml:space="preserve">   _____/ /_____ _   __  (_)___</text>
-    <text class="art" x="72" y="334.550" xml:space="preserve">  / ___/ //_/ _ \ | / / / / __ \</text>
-    <text class="art" x="72" y="425.083" xml:space="preserve"> (__  ) ,&lt; /  __/ |/ / / / / / /</text>
-    <text class="art" x="72" y="515.616" xml:space="preserve">/____/_/|_|\___/|___(_)_/_/ /_/</text>
+    <text class="art" x="6.465" y="25.859" xml:space="preserve">         __               _</text>
+    <text class="art" x="6.465" y="123.798" xml:space="preserve">   _____/ /_____ _   __  (_)___</text>
+    <text class="art" x="6.465" y="221.737" xml:space="preserve">  / ___/ //_/ _ \ | / / / / __ \</text>
+    <text class="art" x="6.465" y="319.677" xml:space="preserve"> (__  ) ,&lt; /  __/ |/ / / / / / /</text>
+    <text class="art" x="6.465" y="417.616" xml:space="preserve">/____/_/|_|\___/|___(_)_/_/ /_/</text>
   </g>
-  <text class="label" x="1528" y="575.826" text-anchor="end">skev.in</text>
 </svg>

@@ -3,7 +3,9 @@
 
 The constants below are copied from the skev.in source so this repo stands on
 its own: MASTHEAD_ART and MASTHEAD_SIZING from src/masthead.ts, the ribbon and
-the colours from src/styles.css. Run it from anywhere:
+the colours from src/styles.css. The output is transparent and cropped to the
+mark, because it sits on a GitHub README that is white on one theme and near
+black on the other. Run it from anywhere:
 
     python3 scripts/banner.py
 """
@@ -25,13 +27,18 @@ MASTHEAD_ART = [
 ]
 
 # src/masthead.ts MASTHEAD_SIZING
-MAST_W = 14.619  # art width in em, the divisor the site sizes the mark from
 MAST_TRACK = -0.1818  # em, letter-spacing: -100/550 units
 MAST_LH = 0.909  # line-height: 500/550 units
 
-# Departure Mono metrics, UPM 550, typo ascender 550, descender -150
-FONT_ASCENT = 1.0  # em above baseline
-FONT_DESCENT = 150 / 550  # em below baseline
+# Ink box of the five rows, in em, measured by rasterising the art at a known
+# size and taking the alpha bounds. Origin is the start of the first line and
+# its baseline, so INK_TOP is negative (underscores sit just above it).
+INK_LEFT = 0.09
+INK_RIGHT = 14.64
+INK_TOP = -0.09
+INK_BOTTOM = 3.73
+
+MARGIN = 0.15  # em of quiet space on all four sides
 
 # src/styles.css .ascii, the seven stop chroma ribbon, top to bottom
 RIBBON = [
@@ -44,16 +51,9 @@ RIBBON = [
     (100, "#ef6b6b"),  # coral, closes the loop
 ]
 
-BG = "#0b0c15"  # --bg
-QUIET = "#81869f"  # --quiet
 DRIFT_SECONDS = 8  # rgb-drift, 8s linear infinite
 
-WIDTH = 1600
-SIDE = 72
-TOP = 72
-GAP = 34  # art to the skev.in line
-LABEL_SIZE = 22
-BOTTOM = 40
+WIDTH = 1600  # intrinsic width; the README scales it to the column
 
 
 def data_uri(name: str) -> str:
@@ -66,13 +66,17 @@ def esc(text: str) -> str:
 
 
 def build(animated: bool) -> str:
-    size = (WIDTH - 2 * SIDE) / MAST_W
+    ink_w = INK_RIGHT - INK_LEFT
+    ink_h = INK_BOTTOM - INK_TOP
+    size = WIDTH / (ink_w + 2 * MARGIN)
+    height = round((ink_h + 2 * MARGIN) * size)
+
+    # Place the ink box at MARGIN from the top left corner.
+    origin_x = (MARGIN - INK_LEFT) * size
+    first_baseline = (MARGIN - INK_TOP) * size
+    art_top = MARGIN * size
+    art_h = ink_h * size
     line_step = MAST_LH * size
-    art_h = len(MASTHEAD_ART) * line_step
-    # Half leading, exactly as a CSS line box places the first baseline.
-    first_baseline = TOP + (MAST_LH - (FONT_ASCENT + FONT_DESCENT)) / 2 * size + FONT_ASCENT * size
-    label_baseline = TOP + art_h + GAP + LABEL_SIZE * 0.78
-    height = round(TOP + art_h + GAP + LABEL_SIZE + BOTTOM)
 
     # background-size: 100% 300%, so the ribbon is three art-heights tall and
     # drifts one full image height over 8s. Both ends are coral, so repeating
@@ -91,7 +95,7 @@ def build(animated: bool) -> str:
     )
 
     lines = "".join(
-        f'\n    <text class="art" x="{SIDE}" y="{first_baseline + i * line_step:.3f}"'
+        f'\n    <text class="art" x="{origin_x:.3f}" y="{first_baseline + i * line_step:.3f}"'
         f' xml:space="preserve">{esc(row)}</text>'
         for i, row in enumerate(MASTHEAD_ART)
     )
@@ -100,18 +104,12 @@ def build(animated: bool) -> str:
   <title>skev.in</title>
   <defs>
     <linearGradient id="ribbon" gradientUnits="userSpaceOnUse" spreadMethod="repeat"
-      x1="0" y1="{TOP:.3f}" x2="0" y2="{TOP + 3 * art_h:.3f}">{stops}{drift}
+      x1="0" y1="{art_top:.3f}" x2="0" y2="{art_top + 3 * art_h:.3f}">{stops}{drift}
     </linearGradient>
     <style>
       @font-face {{
         font-family: "Departure Mono";
         src: url({data_uri("DepartureMono-ascii.woff2")}) format("woff2");
-        font-weight: 400;
-        font-style: normal;
-      }}
-      @font-face {{
-        font-family: "Commit Mono";
-        src: url({data_uri("CommitMono-skevin.woff2")}) format("woff2");
         font-weight: 400;
         font-style: normal;
       }}
@@ -123,17 +121,10 @@ def build(animated: bool) -> str:
         white-space: pre;
         text-rendering: geometricPrecision;
       }}
-      .label {{
-        font-family: "Commit Mono", ui-monospace, monospace;
-        font-size: {LABEL_SIZE}px;
-        fill: {QUIET};
-      }}
     </style>
   </defs>
-  <rect width="{WIDTH}" height="{height}" fill="{BG}"/>
   <g>{lines}
   </g>
-  <text class="label" x="{WIDTH - SIDE}" y="{label_baseline:.3f}" text-anchor="end">skev.in</text>
 </svg>
 """
 
